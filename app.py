@@ -513,7 +513,7 @@ footer_frame.pack(side="bottom", fill="x", pady=5)
 footer = ctk.CTkLabel(
     footer_frame,
     text="Powered by N&D Co. | www.ndcompany.in | Version 1.0",
-    font=("Bookman Old Style", 11, "italic"),
+    font=("Times New Roman", 11, "italic"),
     text_color="gray"
 )
 footer.pack()
