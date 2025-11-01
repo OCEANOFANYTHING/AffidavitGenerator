@@ -1,6 +1,13 @@
-# Affidavit Generator - Enhanced UI (v1.1)
+# Affidavit Generator - Enhanced UI (v1.0)
 
 A modern, professional GUI-based Python application for generating affidavit documents for citizenship applications.
+
+---
+
+**Developed by:** [N&D Co.](https://www.ndcompany.in)  
+**Made for:** [Bangali Oikya Manch](https://bangalioikyamanch.com)
+
+---
 
 ## 🎨 What's New in v1.1
 
@@ -174,10 +181,16 @@ Powered by N&D Co. | <www.ndcompany.in>
 
 For support or feature requests, please contact N&D Co.
 
+## 📝 Credits & Attribution
+
+**Developed by:** [N&D Co.](https://www.ndcompany.in) and Nakshatra Ranjan Saha  
+**Made for:** [Bangali Oikya Manch](https://bangalioikyamanch.com)  
+**Purpose:** Streamlining citizenship affidavit documentation process
+
 ---
 
-**Version:** 1.1 (Enhanced UI)  
-**Last Updated:** October 30, 2025
+**Version:** 1.0  
+**Last Updated:** November 2, 2025
 
 **Additional Documentation:**
 - [ENHANCED_FEATURES.md](ENHANCED_FEATURES.md) - Detailed feature descriptions
