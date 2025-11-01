@@ -173,7 +173,81 @@ Built with:
 - CustomTkinter for modern GUI
 - python-docx for Word document processing
 
-## 📄 License
+## � Building & Distribution
+
+### Building Executable
+
+To build a standalone Windows executable:
+
+```powershell
+.\build_exe.bat
+```
+
+This creates a `dist` folder with the executable and all dependencies.
+
+### Building Windows Installer
+
+To create a professional Windows installer with Start Menu and Desktop shortcuts:
+
+```powershell
+.\build_installer.bat
+```
+
+**Requirements:**
+- [Inno Setup 6](https://jrsoftware.org/isinfo.php) must be installed
+
+**Output:**
+- `installer_output\AffidavitGenerator_Setup_v1.0.exe`
+
+### Creating Portable Version
+
+To package the application as a portable ZIP file:
+
+```powershell
+.\package_portable.bat
+```
+
+**What it does:**
+- Copies the `dist` folder contents
+- Creates a README.txt with usage instructions
+- Packages everything into a ZIP file
+- No installation required - just extract and run!
+
+**Output:**
+- `AffidavitGenerator_Portable_v1.0.zip` (~100 MB)
+
+### Build Everything at Once
+
+To build both the installer and portable version in one command:
+
+```powershell
+.\build_all.bat
+```
+
+This runs:
+1. `build_exe.bat` - Creates executable
+2. `build_installer.bat` - Creates Windows installer
+3. `package_portable.bat` - Creates portable ZIP
+
+### Prepare Release
+
+To prepare a complete release package:
+
+```powershell
+.\prepare_release.bat
+```
+
+This creates both distribution formats ready for GitHub release:
+- Windows Installer (.exe)
+- Portable Version (.zip)
+
+**See also:**
+- [BUILD_GUIDE.md](BUILD_GUIDE.md) - Complete build and distribution guide
+- [GITHUB_RELEASE_GUIDE.md](GITHUB_RELEASE_GUIDE.md) - How to create a GitHub release
+- [INSTALLER_README.md](INSTALLER_README.md) - Installer documentation
+- [SIGNING_GUIDE.md](SIGNING_GUIDE.md) - Code signing information
+
+## �📄 License
 
 Powered by N&D Co. | <www.ndcompany.in>
 
