@@ -84,7 +84,19 @@ First stable release of Affidavit Generator - A professional desktop application
 - Code signing guide
 - Installer building instructions
 
-### 🔒 Security & Privacy
+### � Build Scripts
+
+Automated build process for creating distributions:
+
+- **`build_exe.bat`**: Builds standalone executable using PyInstaller
+- **`build_installer.bat`**: Creates Windows installer using Inno Setup
+- **`package_portable.bat`**: Packages portable ZIP version with README
+- **`build_all.bat`**: Runs all build scripts in sequence
+- **`prepare_release.bat`**: Complete release preparation workflow
+
+All scripts include error checking and provide clear feedback during build process.
+
+### �🔒 Security & Privacy
 
 - All processing done locally on user's computer
 - No internet connection required
