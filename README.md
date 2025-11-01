@@ -1,11 +1,48 @@
-# Affidavit Generator - Enhanced UI (v1.0)
+<div align="center">
+
+<img src="logo.png" alt="Affidavit Generator Logo" width="200"/>
+
+# Affidavit Generator
+
+### Modern, Professional Affidavit Document Generator
+
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)
+[![Release](https://img.shields.io/badge/release-v1.0.0-green.svg)](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)
+[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://github.com/OCEANOFANYTHING/AffidavitGenerator)
+[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-Custom-orange.svg)](https://www.ndcompany.in)
+[![Made with](https://img.shields.io/badge/made%20with-CustomTkinter-blue.svg)](https://github.com/TomSchimansky/CustomTkinter)
+
+**🔗 [Download Latest Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)**
 
 A modern, professional GUI-based Python application for generating affidavit documents for citizenship applications.
 
 ---
 
-**Developed by:** [N&D Co.](https://www.ndcompany.in)  
+**Developed by:** [N&D Co.](https://www.ndcompany.in) and Nakshatra Ranjan Saha  
 **Made for:** [Bangali Oikya Manch](https://bangalioikyamanch.com)
+
+</div>
+
+---
+
+## 📥 Download
+
+Get the latest version of Affidavit Generator:
+
+### [🚀 Download v1.0.0 Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)
+
+**Choose your preferred version:**
+
+| Package | Size | Description |
+|---------|------|-------------|
+| [**Windows Installer** 💿](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/download/v1.0.0/AffidavitGenerator_Setup_v1.0.exe) | ~100 MB | Recommended. Professional installation with shortcuts and uninstaller |
+| [**Portable ZIP** 📦](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/download/v1.0.0/AffidavitGenerator_Portable_v1.0.zip) | ~100 MB | No installation required. Extract and run anywhere |
+
+**System Requirements:**
+- Windows 7 or later (Windows 10/11 recommended)
+- 200 MB free disk space
+- No additional software required
 
 ---
 
@@ -173,7 +210,7 @@ Built with:
 - CustomTkinter for modern GUI
 - python-docx for Word document processing
 
-## � Building & Distribution
+## Building & Distribution
 
 ### Building Executable
 
@@ -253,7 +290,10 @@ Powered by N&D Co. | <www.ndcompany.in>
 
 ## 🤝 Support
 
-For support or feature requests, please contact N&D Co.
+For support or feature requests:
+- 📧 Contact [N&D Co.](https://www.ndcompany.in)
+- 🐛 Report issues on [GitHub Issues](https://github.com/OCEANOFANYTHING/AffidavitGenerator/issues)
+- 📦 Check for updates on [Releases Page](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases)
 
 ## 📝 Credits & Attribution
 
@@ -263,10 +303,23 @@ For support or feature requests, please contact N&D Co.
 
 ---
 
-**Version:** 1.0  
-**Last Updated:** November 2, 2025
+<div align="center">
 
-**Additional Documentation:**
-- [ENHANCED_FEATURES.md](ENHANCED_FEATURES.md) - Detailed feature descriptions
-- [UI_GUIDE.md](UI_GUIDE.md) - Visual UI guide and tips
-- [QUICK_START.md](QUICK_START.md) - Quick start instructions
+## 📊 Project Info
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Last Updated](https://img.shields.io/badge/updated-November%202%2C%202025-green.svg)
+![Status](https://img.shields.io/badge/status-stable-success.svg)
+![Made with Love](https://img.shields.io/badge/made%20with-%E2%9D%A4%EF%B8%8F-red.svg)
+
+### 📚 Additional Documentation
+
+[Enhanced Features](ENHANCED_FEATURES.md) • [UI Guide](UI_GUIDE.md) • [Quick Start](QUICK_START.md) • [Build Guide](BUILD_GUIDE.md) • [Changelog](CHANGELOG.md)
+
+---
+
+**⭐ If you find this helpful, please consider starring the repo!**
+
+[🌟 Star on GitHub](https://github.com/OCEANOFANYTHING/AffidavitGenerator) • [📦 View Releases](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases)
+
+</div>
