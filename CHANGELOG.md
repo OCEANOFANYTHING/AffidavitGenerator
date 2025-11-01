@@ -2,9 +2,15 @@
 
 All notable changes to Affidavit Generator will be documented in this file.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+---
+
 ## [1.0.0] - 2025-11-02
 
 ### 🎉 Initial Release
+
+**[📦 Download v1.0.0](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)**
 
 First stable release of Affidavit Generator - A professional desktop application for generating citizenship affidavit documents.
 
