@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist-info/
+*.egg
+
+# Virtual Environment
+.env/
+env/
+venv/
+ENV/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+output/
+*.log
+
+# Keep template files but ignore output
+!affidavit/
+affidavit/*.docx
+
+# Keep logo files
+!logo.ico
+!logo.png
