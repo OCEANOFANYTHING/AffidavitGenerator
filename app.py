@@ -39,25 +39,23 @@ def generate_affidavits(data):
     indian_address = ", ".join([
         data.get("IND_Village", ""),
         data.get("IND_Post_Office", ""),
+        data.get("IND_Police_Station", ""),
         data.get("IND_District", ""),
-        data.get("IND_State", ""),
         data.get("IND_Pin_Code", "")
     ])
     
     bangladesh_address = ", ".join([
         data.get("BD_Village", ""),
         data.get("BD_Post_Office", ""),
-        data.get("BD_District", ""),
-        data.get("BD_Upazila", ""),
-        data.get("BD_Division", ""),
-        data.get("BD_Post_Code", "")
+        data.get("BD_Police_Station", ""),
+        data.get("BD_District", "")
     ])
     
     introducer_address = ", ".join([
         data.get("INT_Village", ""),
         data.get("INT_Post_Office", ""),
+        data.get("INT_Police_Station", ""),
         data.get("INT_District", ""),
-        data.get("INT_State", ""),
         data.get("INT_Pin_Code", "")
     ])
 
@@ -123,8 +121,8 @@ def submit_form():
     indian_address_fields = [
         ("IND_Village", "Indian Address - Village"),
         ("IND_Post_Office", "Indian Address - Post Office"),
+        ("IND_Police_Station", "Indian Address - Police Station"),
         ("IND_District", "Indian Address - District"),
-        ("IND_State", "Indian Address - State"),
         ("IND_Pin_Code", "Indian Address - Pin Code")
     ]
     
@@ -140,10 +138,8 @@ def submit_form():
     bangladesh_address_fields = [
         ("BD_Village", "Bangladesh Address - Village"),
         ("BD_Post_Office", "Bangladesh Address - Post Office"),
-        ("BD_District", "Bangladesh Address - District"),
-        ("BD_Upazila", "Bangladesh Address - Upazila"),
-        ("BD_Division", "Bangladesh Address - Division"),
-        ("BD_Post_Code", "Bangladesh Address - Post Code")
+        ("BD_Police_Station", "Bangladesh Address - Police Station"),
+        ("BD_District", "Bangladesh Address - District")
     ]
     
     for field_key, field_label in bangladesh_address_fields:
@@ -158,8 +154,8 @@ def submit_form():
     introducer_address_fields = [
         ("INT_Village", "Introducer Address - Village"),
         ("INT_Post_Office", "Introducer Address - Post Office"),
+        ("INT_Police_Station", "Introducer Address - Police Station"),
         ("INT_District", "Introducer Address - District"),
-        ("INT_State", "Introducer Address - State"),
         ("INT_Pin_Code", "Introducer Address - Pin Code")
     ]
     
@@ -337,8 +333,8 @@ indian_address_label.pack(pady=(15, 5), padx=40, fill="x")
 for field_key, field_label in [
     ("IND_Village", "Village"),
     ("IND_Post_Office", "Post Office"),
+    ("IND_Police_Station", "Police Station"),
     ("IND_District", "District"),
-    ("IND_State", "State"),
     ("IND_Pin_Code", "Pin Code")
 ]:
     create_field_row(frame, field_label, field_key, padx=50, pady=5, height=32, font_size=11)
@@ -357,10 +353,8 @@ bangladesh_address_label.pack(pady=(15, 5), padx=40, fill="x")
 for field_key, field_label in [
     ("BD_Village", "Village"),
     ("BD_Post_Office", "Post Office"),
-    ("BD_District", "District"),
-    ("BD_Upazila", "Upazila"),
-    ("BD_Division", "Division"),
-    ("BD_Post_Code", "Post Code")
+    ("BD_Police_Station", "Police Station"),
+    ("BD_District", "District")
 ]:
     create_field_row(frame, field_label, field_key, padx=50, pady=5, height=32, font_size=11)
 
@@ -419,8 +413,8 @@ introducer_address_label.pack(pady=(15, 5), padx=40, fill="x")
 for field_key, field_label in [
     ("INT_Village", "Village"),
     ("INT_Post_Office", "Post Office"),
+    ("INT_Police_Station", "Police Station"),
     ("INT_District", "District"),
-    ("INT_State", "State"),
     ("INT_Pin_Code", "Pin Code")
 ]:
     create_field_row(frame, field_label, field_key, padx=50, pady=5, height=32, font_size=11)
@@ -518,7 +512,7 @@ footer_frame.pack(side="bottom", fill="x", pady=5)
 
 footer = ctk.CTkLabel(
     footer_frame,
-    text="Powered by N&D Co. | www.ndcompany.in | Version 1.2",
+    text="Powered by N&D Co. | www.ndcompany.in | Version 1.0",
     font=("Bookman Old Style", 11, "italic"),
     text_color="gray"
 )
