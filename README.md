@@ -4,7 +4,7 @@
 
 <img src="logo.png" alt="Affidavit Generator Logo" width="200"/>
 
-## Modern, Professional Affidavit Document Generator
+<h2> Modern, Professional Affidavit Document Generator</h2>
 
 <p align="center">
   <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0">
@@ -26,6 +26,7 @@
     <img src="https://img.shields.io/badge/made%20with-CustomTkinter-blue.svg" alt="Made with CustomTkinter">
   </a>
 </p>
+</div>
 
 **🔗 [Download Latest Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)**
 
@@ -35,8 +36,6 @@ A modern, professional GUI-based Python application for generating affidavit doc
 
 **Developed by:** [N&D Co.](https://www.ndcompany.in) and Nakshatra Ranjan Saha  
 **Made for:** [Bangali Oikya Manch](https://bangalioikyamanch.com)
-
-</div>
 
 ---
 
