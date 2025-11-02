@@ -337,4 +337,3 @@ For support or feature requests:
 
 [🌟 Star on GitHub](https://github.com/OCEANOFANYTHING/AffidavitGenerator) • [📦 View Releases](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases)
 
-</div>
