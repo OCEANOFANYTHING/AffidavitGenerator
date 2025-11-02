@@ -1,5 +1,3 @@
-
-
 <div align="center">
 
 <img src="logo.png" alt="Affidavit Generator Logo" width="200"/>
