@@ -6,12 +6,26 @@
 
 ### Modern, Professional Affidavit Document Generator
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)
-[![Release](https://img.shields.io/badge/release-v1.0.0-green.svg)](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)
-[![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://github.com/OCEANOFANYTHING/AffidavitGenerator)
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-Custom-orange.svg)](https://www.ndcompany.in)
-[![Made with](https://img.shields.io/badge/made%20with-CustomTkinter-blue.svg)](https://github.com/TomSchimansky/CustomTkinter)
+<p align="center">
+  <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0">
+    <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version">
+  </a>
+  <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0">
+    <img src="https://img.shields.io/badge/release-v1.0.0-green.svg" alt="Release">
+  </a>
+  <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator">
+    <img src="https://img.shields.io/badge/platform-Windows-lightgrey.svg" alt="Platform">
+  </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python">
+  </a>
+  <a href="https://www.ndcompany.in">
+    <img src="https://img.shields.io/badge/license-Custom-orange.svg" alt="License">
+  </a>
+  <a href="https://github.com/TomSchimansky/CustomTkinter">
+    <img src="https://img.shields.io/badge/made%20with-CustomTkinter-blue.svg" alt="Made with CustomTkinter">
+  </a>
+</p>
 
 **🔗 [Download Latest Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)**
 
