@@ -318,8 +318,6 @@ For support or feature requests:
 
 ---
 
-<div align="center">
-
 ## 📊 Project Info
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
@@ -336,4 +334,3 @@ For support or feature requests:
 **⭐ If you find this helpful, please consider starring the repo!**
 
 [🌟 Star on GitHub](https://github.com/OCEANOFANYTHING/AffidavitGenerator) • [📦 View Releases](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases)
-
