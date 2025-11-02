@@ -1,10 +1,10 @@
+# Affidavit Generator
+
 <div align="center">
 
 <img src="logo.png" alt="Affidavit Generator Logo" width="200"/>
 
-# Affidavit Generator
-
-### Modern, Professional Affidavit Document Generator
+## Modern, Professional Affidavit Document Generator
 
 <p align="center">
   <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0">
