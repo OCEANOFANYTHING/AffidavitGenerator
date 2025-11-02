@@ -1,4 +1,4 @@
-# Affidavit Generator
+
 
 <div align="center">
 
@@ -27,6 +27,8 @@
   </a>
 </p>
 </div>
+
+# Affidavit Generator
 
 **🔗 [Download Latest Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)**
 
