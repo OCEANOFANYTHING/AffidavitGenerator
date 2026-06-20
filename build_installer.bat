@@ -10,18 +10,53 @@ echo.
 echo This will create a Windows installer (.exe)...
 echo.
 
-REM Step 1: Check if Inno Setup is installed
-echo Step 1: Checking for Inno Setup...
+REM Step 1: Find Inno Setup dynamically
+echo Step 1: Searching for Inno Setup...
+
+set "ISCC="
+set "ISCC_DIR="
+
+REM Try to find ISCC.exe in common locations
 if exist "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" (
-    set ISCC="C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-    echo Found Inno Setup 6
+    set "ISCC=C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+    set "ISCC_DIR=C:\Program Files (x86)\Inno Setup 6"
+    echo Found Inno Setup 6 at: C:\Program Files ^(x86^)\Inno Setup 6
 ) else if exist "C:\Program Files\Inno Setup 6\ISCC.exe" (
-    set ISCC="C:\Program Files\Inno Setup 6\ISCC.exe"
-    echo Found Inno Setup 6
+    set "ISCC=C:\Program Files\Inno Setup 6\ISCC.exe"
+    set "ISCC_DIR=C:\Program Files\Inno Setup 6"
+    echo Found Inno Setup 6 at: C:\Program Files\Inno Setup 6
 ) else if exist "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" (
-    set ISCC="C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
-    echo Found Inno Setup 5
-) else (
+    set "ISCC=C:\Program Files (x86)\Inno Setup 5\ISCC.exe"
+    set "ISCC_DIR=C:\Program Files (x86)\Inno Setup 5"
+    echo Found Inno Setup 5 at: C:\Program Files ^(x86^)\Inno Setup 5
+) else if exist "C:\Program Files\Inno Setup 5\ISCC.exe" (
+    set "ISCC=C:\Program Files\Inno Setup 5\ISCC.exe"
+    set "ISCC_DIR=C:\Program Files\Inno Setup 5"
+    echo Found Inno Setup 5 at: C:\Program Files\Inno Setup 5
+)
+
+REM If not found in common paths, try searching using where command
+if not defined ISCC (
+    echo Searching using where command...
+    for /f "tokens=*" %%i in ('where /r "C:\Program Files" ISCC.exe 2^>nul') do (
+        if not defined ISCC (
+            set "ISCC=%%i"
+            echo Found at: %%i
+        )
+    )
+)
+
+if not defined ISCC (
+    for /f "tokens=*" %%i in ('where /r "C:\Program Files ^(x86^)" ISCC.exe 2^>nul') do (
+        if not defined ISCC (
+            set "ISCC=%%i"
+            echo Found at: %%i
+        )
+    )
+)
+
+REM If not found anywhere, show error
+if not defined ISCC (
     echo.
     echo ERROR: Inno Setup not found!
     echo.
@@ -57,7 +92,7 @@ echo.
 echo Step 4: Building installer with Inno Setup...
 echo This may take a minute...
 echo.
-%ISCC% "installer.iss"
+"%ISCC%" "installer.iss"
 
 if %errorlevel% neq 0 (
     echo.
