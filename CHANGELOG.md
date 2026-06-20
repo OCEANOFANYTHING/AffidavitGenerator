@@ -6,6 +6,44 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.0] - 2026-06-21
+
+### 🚀 Performance Improvements
+
+#### Auto-Scroll Navigation
+- **Tab Key Scrolling**: Form now automatically scrolls to keep focused input fields visible
+- When Tab is pressed, the scrollable frame scrolls to reveal the target input field
+- Prevents the "cursor disappearing" issue when navigating to off-screen fields
+- Works for all input widgets including text entries and date picker
+
+### 🎨 Document Formatting
+
+#### Font Size Customization
+- **Schedule-1C Document**: Font size changed from 12pt to **9.5pt** for better fit
+- Other documents (Self-Declaration, Introducer-CR) continue using 12pt font size
+- Preserves Bookman Old Style font formatting
+
+### ✨ New Features
+
+#### Same Address Checkbox
+- **"Same as Applicant's Indian Address"** checkbox added to Introducer Address section
+- When enabled:
+  - Introducer Address fields are automatically populated with Indian Address values
+  - Introducer Address fields are disabled (grayed out)
+  - Live sync: Typing in Indian Address fields automatically updates Introducer Address
+- When disabled: Introducer Address fields become editable again
+- **Purpose**: Most introducers live near the applicant, so this saves time by avoiding duplicate data entry
+
+### 🔧 Build System
+
+#### Dynamic Inno Setup Detection
+- `build_installer.bat` now dynamically searches for Inno Setup installation
+- Searches multiple common installation paths automatically
+- Falls back to system PATH search if needed
+- Works across different computers regardless of Inno Setup installation location
+
+---
+
 ## [1.0.0] - 2025-11-02
 
 ### 🎉 Initial Release
@@ -170,4 +208,4 @@ For support or feature requests, please create an issue on GitHub.
 
 ---
 
-*Version 1.0.0 - Initial Release - November 2, 2025*
+*Version 1.1.0 - Auto-Scroll, Same Address Checkbox, Dynamic Inno Setup - June 21, 2026*
