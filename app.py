@@ -217,8 +217,80 @@ def clear_form():
 
 def focus_next_widget(event):
     """Move focus to next widget when Tab is pressed"""
-    event.widget.tk_focusNext().focus()
+    next_widget = event.widget.tk_focusNext()
+    next_widget.focus()
+    scroll_to_widget(next_widget)
     return "break"  # Prevent default Tab behavior
+
+def scroll_to_widget(widget):
+    """Scroll the scrollable frame to make the widget visible"""
+    try:
+        canvas_see(widget)
+    except Exception:
+        pass
+
+def canvas_see(widget):
+    """Scroll canvas to make widget visible using screen coordinates"""
+    try:
+        canvas = frame._parent_canvas
+        canvas.update_idletasks()
+
+        # Get widget's screen position
+        widget.update_idletasks()
+        widget_top = widget.winfo_rooty()
+        widget_bottom = widget_top + widget.winfo_height()
+
+        # Get canvas's visible screen area
+        canvas_top = canvas.winfo_rooty()
+        canvas_bottom = canvas_top + canvas.winfo_height()
+
+        # Calculate total scrollable height
+        scrollregion = canvas.cget('scrollregion')
+        if scrollregion:
+            _, _, _, total_height = map(float, scrollregion.split())
+        else:
+            total_height = canvas.winfo_height()
+
+        # Determine if scrolling is needed
+        if widget_top < canvas_top + 60:
+            # Widget is above visible area - scroll up
+            # Find where the widget is in the scrollable content
+            # The widget's y position relative to the interior frame
+            interior = None
+            for child in canvas.winfo_children():
+                if child.winfo_name() and 'scrollbar' not in child.winfo_name().lower():
+                    interior = child
+                    break
+
+            if interior:
+                interior_y = interior.winfo_rooty()
+                widget_rel_y = widget_top - interior_y
+                scroll_fraction = widget_rel_y / total_height if total_height > 0 else 0
+                canvas.yview_moveto(max(0, scroll_fraction - 0.03))
+        elif widget_bottom > canvas_bottom - 60:
+            # Widget is below visible area - scroll down
+            interior = None
+            for child in canvas.winfo_children():
+                if child.winfo_name() and 'scrollbar' not in child.winfo_name().lower():
+                    interior = child
+                    break
+
+            if interior:
+                interior_y = interior.winfo_rooty()
+                widget_rel_y = widget_top - interior_y
+                scroll_fraction = widget_rel_y / total_height if total_height > 0 else 0
+                # Leave some space at top (15% of visible area)
+                visible_fraction = canvas.winfo_height() / total_height if total_height > 0 else 0.5
+                canvas.yview_moveto(max(0, scroll_fraction - visible_fraction + 0.1))
+    except Exception as e:
+        print(f"Scroll error: {e}")
+
+def on_widget_focus(event):
+    """Scroll to widget when it receives focus via any method (Tab, click, etc.)"""
+    widget = event.widget
+    # Only scroll for actual entry widgets, not labels or other widgets
+    if isinstance(widget, (ctk.CTkEntry, ctk.CTkTextbox)):
+        scroll_to_widget(widget)
 
 def validate_number_input(value):
     """Validate that input is a number or empty"""
@@ -289,18 +361,22 @@ def create_field_row(parent, label_text, field_key, padx=30, pady=8, label_width
     """Create a field row with label and entry - optimized"""
     field_frame = ctk.CTkFrame(parent, fg_color="transparent")
     field_frame.pack(pady=pady, padx=padx, fill="x")
-    
+
     label = ctk.CTkLabel(
-        field_frame, 
-        text=label_text + " *", 
+        field_frame,
+        text=label_text + " *",
         font=("Bookman Old Style", 13 if padx <= 30 else 12, "bold" if padx <= 30 else "normal"),
         anchor="w",
         width=label_width if padx <= 30 else 200
     )
     label.pack(side="left", padx=(0, 10))
-    
+
     entry = ctk.CTkEntry(field_frame, height=height, font=("Bookman Old Style", font_size))
     entry.pack(side="left", fill="x", expand=True)
+    # Bind focus event to auto-scroll when widget receives focus
+    entry.bind('<FocusIn>', on_widget_focus)
+    # Bind Tab key to custom handler that also scrolls
+    entry.bind('<Tab>', focus_next_widget)
     entries[field_key] = entry
     return entry
 
@@ -382,6 +458,9 @@ date_entry_widget = DateEntry(
     year=2020
 )
 date_entry_widget.pack(side="left")
+# Bind events for auto-scroll
+date_entry_widget.bind('<FocusIn>', on_widget_focus)
+date_entry_widget.bind('<Tab>', focus_next_widget)
 
 # Section 2: Introducer Information
 section2_label = ctk.CTkLabel(
@@ -445,6 +524,9 @@ age_entry = ctk.CTkEntry(
     placeholder_text="18-100"
 )
 age_entry.pack(side="left")
+# Bind events for auto-scroll
+age_entry.bind('<FocusIn>', on_widget_focus)
+age_entry.bind('<Tab>', focus_next_widget)
 
 age_hint = ctk.CTkLabel(
     age_frame,
