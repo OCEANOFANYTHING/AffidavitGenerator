@@ -42,6 +42,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Falls back to system PATH search if needed
 - Works across different computers regardless of Inno Setup installation location
 
+**Full Changelog**: https://github.com/OCEANOFANYTHING/AffidavitGenerator/compare/v1.0.0...v1.1.0
+
 ---
 
 ## [1.0.0] - 2025-11-02
