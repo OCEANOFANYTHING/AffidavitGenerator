@@ -5,17 +5,17 @@
 <h2> Modern, Professional Affidavit Document Generator</h2>
 
 <p align="center">
-  <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0">
-    <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version">
+  <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.1.0">
+    <img src="https://img.shields.io/badge/version-1.1.0-blue.svg" alt="Version">
   </a>
-  <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0">
-    <img src="https://img.shields.io/badge/release-v1.0.0-green.svg" alt="Release">
+  <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.1.0">
+    <img src="https://img.shields.io/badge/release-v1.1.0-green.svg" alt="Release">
   </a>
   <a href="https://github.com/OCEANOFANYTHING/AffidavitGenerator">
     <img src="https://img.shields.io/badge/platform-Windows-lightgrey.svg" alt="Platform">
   </a>
   <a href="https://www.python.org/downloads/">
-    <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python">
+    <img src="https://img.shields.io/badge/python-3.14+-blue.svg" alt="Python">
   </a>
   <a href="https://www.ndcompany.in">
     <img src="https://img.shields.io/badge/license-Custom-orange.svg" alt="License">
@@ -28,7 +28,7 @@
 
 # Affidavit Generator
 
-**🔗 [Download Latest Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)**
+**🔗 [Download Latest Release v1.1.0](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.1.0)**
 
 A modern, professional GUI-based Python application for generating affidavit documents for citizenship applications.
 
@@ -43,14 +43,14 @@ A modern, professional GUI-based Python application for generating affidavit doc
 
 Get the latest version of Affidavit Generator:
 
-### [🚀 Download v1.0.0 Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.0.0)
+### [🚀 Download v1.1.0 Release](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/tag/v1.1.0)
 
 **Choose your preferred version:**
 
 | Package | Size | Description |
 |---------|------|-------------|
-| [**Windows Installer** 💿](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/download/v1.0.0/AffidavitGenerator_Setup_v1.0.exe) | ~100 MB | Recommended. Professional installation with shortcuts and uninstaller |
-| [**Portable ZIP** 📦](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/download/v1.0.0/AffidavitGenerator_Portable_v1.0.zip) | ~100 MB | No installation required. Extract and run anywhere |
+| [**Windows Installer** 💿](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/download/v1.1.0/AffidavitGenerator_Setup_v1.1.exe) | ~100 MB | Recommended. Professional installation with shortcuts and uninstaller |
+| [**Portable ZIP** 📦](https://github.com/OCEANOFANYTHING/AffidavitGenerator/releases/download/v1.1.0/AffidavitGenerator_Portable_v1.1.zip) | ~100 MB | No installation required. Extract and run anywhere |
 
 **System Requirements:**
 - Windows 7 or later (Windows 10/11 recommended)
@@ -59,17 +59,26 @@ Get the latest version of Affidavit Generator:
 
 ---
 
-## 🎨 What's New in v1.1
+## 🎨 What's New in v1.1.0
 
-- ✨ **Modern Professional UI** - Complete redesign with gradient headers and icons
-- 📅 **Calendar Date Picker** - No more typing dates manually
-- 🎚️ **Age Slider Control** - Interactive slider (18-100 years) with live display
-- 📝 **Multi-line Address Fields** - Better visibility for complete addresses
-- ✅ **Form Validation** - Required field checks with clear error messages
-- 🎉 **Success Notifications** - Popup confirmations with detailed info
-- 🔄 **Clear Form Button** - Quick reset functionality
-- 📋 **Organized Sections** - Applicant and Introducer sections clearly separated
-- ℹ️ **Info Panels** - Helpful tips and reminders
+### ✨ New Features
+- 📍 **Same Address Checkbox** - Auto-fill Introducer Address when same as Applicant's Indian Address
+  - Saves time by avoiding duplicate data entry
+  - Live sync: Changes to Indian Address automatically update Introducer Address
+  - Toggle checkbox to enable/disable
+
+### 🚀 Performance Improvements
+- 📜 **Auto-Scroll Navigation** - Form automatically scrolls to keep focused input visible
+  - No more "cursor disappearing" when Tabbing to off-screen fields
+  - Works seamlessly with all input widgets
+
+### 🎨 Document Formatting
+- 📄 **Font Size Optimization** - Schedule-1C document now uses 9.5pt font for better fit
+  - Other documents continue using 12pt font
+
+### 🔧 Build System
+- 🔍 **Dynamic Inno Setup Detection** - Build script automatically finds Inno Setup installation
+  - Works across different computers regardless of installation location
 
 ## 🚀 Features
 
@@ -133,16 +142,17 @@ python app.py
    **Applicant Information:**
    - **Applicant Name** - Full name of the applicant
    - **Applicants Father Name** - Father's full name
-   - **Applicants Indian Address** - Complete current Indian address (multi-line)
-   - **Applicants Bangladesh Address** - Complete original Bangladesh address (multi-line)
+   - **Applicants Indian Address** - Complete current Indian address (Village, Post Office, Police Station, District, Pin Code)
+   - **Applicants Bangladesh Address** - Complete original Bangladesh address (Village, Post Office, Police Station, District)
    - **Date of Entry** - Select date from calendar picker when applicant entered India
 
    **Introducer/Character Reference:**
    - **Introducer Name** - Name of the person providing character reference
    - **Introducer Occupation** - Occupation of the introducer
    - **Introducer Father Name** - Father's name of the introducer
-   - **Introducer Address** - Complete address of the introducer (multi-line)
-   - **Introducer Age** - Use slider to select age (18-100 years)
+   - **Introducer Address** - Complete address of the introducer
+     - 💡 **Tip:** Check "Same as Applicant's Indian Address" if introducer lives nearby - it auto-fills the address!
+   - **Introducer Age** - Enter age (18-100 years)
 
 2. **Click "📄 Generate Affidavits"**
 
@@ -151,9 +161,9 @@ python app.py
 4. **Find your documents:**
    - Generated files will be saved in: `output/[Applicant Name]/`
    - Three documents will be created with the same names as templates:
-     - `Shedule-1C.docx`
-     - `Self-Declaration.docx`
-     - `Introducer-CR.docx`
+     - `Shedule-1C.docx` (9.5pt font)
+     - `Self-Declaration.docx` (12pt font)
+     - `Introducer-CR.docx` (12pt font)
 
 ## 📝 Form Fields & Template Placeholders
 
@@ -172,16 +182,6 @@ The application maps form fields to template placeholders as follows:
 | Introducer Occupation | `{{CR_PROVIDER_OCCUPATION}}` |
 | Introducer Father Name | `{{CR_PROVIDER_FATHER_NAME}}` |
 | Introducer Address | `{{CR_PROVIDER_ADDRESS}}` |
-
-## 🧪 Testing
-
-To test the generator without using the GUI:
-
-```powershell
-python test_generator.py
-```
-
-This will create a test output folder with sample data.
 
 ## 🎨 Customizing Templates
 
@@ -297,9 +297,9 @@ This creates both distribution formats ready for GitHub release:
 - [INSTALLER_README.md](INSTALLER_README.md) - Installer documentation
 - [SIGNING_GUIDE.md](SIGNING_GUIDE.md) - Code signing information
 
-## �📄 License
+## 📄 License
 
-Powered by N&D Co. | <www.ndcompany.in>
+Powered by N&D Co. | [www.ndcompany.in](https://ndcompany.in)
 
 ## 🤝 Support
 
@@ -318,8 +318,8 @@ For support or feature requests:
 
 ## 📊 Project Info
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Last Updated](https://img.shields.io/badge/updated-November%202%2C%202025-green.svg)
+![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)
+![Last Updated](https://img.shields.io/badge/updated-June%2021%2C%202026-green.svg)
 ![Status](https://img.shields.io/badge/status-stable-success.svg)
 ![Made with Love](https://img.shields.io/badge/made%20with-%E2%9D%A4%EF%B8%8F-red.svg)
 
