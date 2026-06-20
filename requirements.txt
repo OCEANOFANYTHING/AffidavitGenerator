@@ -2,3 +2,4 @@ customtkinter>=5.2.0
 python-docx>=0.8.11
 tkcalendar>=1.6.1
 Pillow>=9.0.0
+pyinstaller>=6.21.0
