@@ -7,25 +7,25 @@ from tkinter import messagebox
 from tkcalendar import DateEntry
 
 # ---------- Core Generator Logic ----------
-def replace_text_in_paragraph(paragraph, placeholder, value):
+def replace_text_in_paragraph(paragraph, placeholder, value, font_size=12):
     """Replace placeholder in paragraph while preserving formatting and applying Bookman Old Style"""
     if placeholder in paragraph.text:
         # Store original paragraph formatting
         original_alignment = paragraph.alignment
         original_style = paragraph.style
-        
+
         # Replace the text
         full_text = paragraph.text
         new_text = full_text.replace(placeholder, value)
-        
+
         # Clear existing runs
         paragraph.clear()
-        
+
         # Add new text as a single run with Bookman Old Style font
         run = paragraph.add_run(new_text)
         run.font.name = 'Bookman Old Style'
-        run.font.size = Pt(12)  # Standard document font size
-        
+        run.font.size = Pt(font_size)
+
         # Restore paragraph formatting
         paragraph.alignment = original_alignment
         paragraph.style = original_style
@@ -43,14 +43,14 @@ def generate_affidavits(data):
         data.get("IND_District", ""),
         data.get("IND_Pin_Code", "")
     ])
-    
+
     bangladesh_address = ", ".join([
         data.get("BD_Village", ""),
         data.get("BD_Post_Office", ""),
         data.get("BD_Police_Station", ""),
         data.get("BD_District", "")
     ])
-    
+
     introducer_address = ", ".join([
         data.get("INT_Village", ""),
         data.get("INT_Post_Office", ""),
@@ -80,24 +80,27 @@ def generate_affidavits(data):
             print(f"Template not found: {template}")
             continue
 
+        # Set font size based on template: Shedule-1C uses 9.5pt, others use 12pt
+        font_size = 9.5 if template == "Shedule-1C.docx" else 12
+
         doc = Document(path)
-        
+
         # Replace in paragraphs with font formatting
         for para in doc.paragraphs:
             for placeholder, value in placeholder_map.items():
-                replace_text_in_paragraph(para, placeholder, value)
-        
+                replace_text_in_paragraph(para, placeholder, value, font_size)
+
         # Replace in tables with font formatting
         for table in doc.tables:
             for row in table.rows:
                 for cell in row.cells:
                     for para in cell.paragraphs:
                         for placeholder, value in placeholder_map.items():
-                            replace_text_in_paragraph(para, placeholder, value)
+                            replace_text_in_paragraph(para, placeholder, value, font_size)
 
         output_path = os.path.join(output_dir, template)
         doc.save(output_path)
-    
+
     return True
 
 # ---------- GUI ----------
