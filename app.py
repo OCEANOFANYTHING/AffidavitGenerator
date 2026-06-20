@@ -225,6 +225,32 @@ def focus_next_widget(event):
     scroll_to_widget(next_widget)
     return "break"  # Prevent default Tab behavior
 
+# Store references to introducer address entries for enabling/disabling
+introducer_address_entries = []
+
+def toggle_same_address():
+    """Toggle introducer address fields based on checkbox state"""
+    is_checked = same_address_var.get()
+
+    if is_checked:
+        # Copy Indian Address values to Introducer Address fields
+        for field_key in ["INT_Village", "INT_Post_Office", "INT_Police_Station", "INT_District", "INT_Pin_Code"]:
+            if field_key in entries:
+                # Get corresponding Indian address field
+                ind_key = field_key.replace("INT_", "IND_")
+                ind_value = entries.get(ind_key, None)
+                if ind_value:
+                    entries[field_key].delete(0, 'end')
+                    entries[field_key].insert(0, ind_value.get().strip())
+
+        # Disable introducer address fields
+        for entry in introducer_address_entries:
+            entry.configure(state="disabled")
+    else:
+        # Enable introducer address fields
+        for entry in introducer_address_entries:
+            entry.configure(state="normal")
+
 def scroll_to_widget(widget):
     """Scroll the scrollable frame to make the widget visible"""
     try:
@@ -359,6 +385,9 @@ frame._parent_canvas.configure(yscrollincrement=20)  # Smooth scroll increment
 
 entries = {}
 
+# Variable to track "same address" checkbox state
+same_address_var = ctk.BooleanVar(value=False)
+
 # Helper function to create field rows efficiently
 def create_field_row(parent, label_text, field_key, padx=30, pady=8, label_width=220, height=35, font_size=12):
     """Create a field row with label and entry - optimized"""
@@ -416,7 +445,18 @@ for field_key, field_label in [
     ("IND_District", "District"),
     ("IND_Pin_Code", "Pin Code")
 ]:
-    create_field_row(frame, field_label, field_key, padx=50, pady=5, height=32, font_size=11)
+    entry = create_field_row(frame, field_label, field_key, padx=50, pady=5, height=32, font_size=11)
+    # Add trace to update introducer address if checkbox is checked
+    def make_trace(ind_key, int_key):
+        def on_ind_field_change(*_):
+            if same_address_var.get():
+                ind_entry = entries.get(ind_key)
+                int_entry = entries.get(int_key)
+                if ind_entry and int_entry:
+                    int_entry.delete(0, 'end')
+                    int_entry.insert(0, ind_entry.get().strip())
+        return on_ind_field_change
+    entry.bind('<KeyRelease>', make_trace(field_key, field_key.replace("IND_", "INT_")))
 
 # Bangladesh Address subsection
 bangladesh_address_label = ctk.CTkLabel(
@@ -491,6 +531,18 @@ introducer_address_label = ctk.CTkLabel(
 )
 introducer_address_label.pack(pady=(15, 5), padx=40, fill="x")
 
+# Same address checkbox
+same_address_checkbox = ctk.CTkCheckBox(
+    frame,
+    text="Same as Applicant's Indian Address",
+    variable=same_address_var,
+    command=toggle_same_address,
+    font=("Bookman Old Style", 12),
+    checkbox_width=20,
+    checkbox_height=20
+)
+same_address_checkbox.pack(pady=(5, 10), padx=50, anchor="w")
+
 # Create introducer address fields efficiently
 for field_key, field_label in [
     ("INT_Village", "Village"),
@@ -499,7 +551,8 @@ for field_key, field_label in [
     ("INT_District", "District"),
     ("INT_Pin_Code", "Pin Code")
 ]:
-    create_field_row(frame, field_label, field_key, padx=50, pady=5, height=32, font_size=11)
+    entry = create_field_row(frame, field_label, field_key, padx=50, pady=5, height=32, font_size=11)
+    introducer_address_entries.append(entry)
 
 # Age field with number input
 age_frame = ctk.CTkFrame(frame, fg_color="transparent")
