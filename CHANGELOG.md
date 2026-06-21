@@ -36,12 +36,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### 🖥️ Large Screen Optimization
 
-#### Enhanced UI Scaling
-- **Larger fonts throughout**: Title (30pt), sections (22pt), subsections (18pt)
-- **Bigger input fields**: Main fields height 45px, address fields 40px
-- **Larger buttons**: Height 55px, font 16pt for better click targets
+#### Enhanced UI Scaling (v2 - 15% Larger)
+- **Larger fonts throughout**: Title (35pt), sections (25pt), subsections (20pt)
+- **Bigger input fields**: Main fields height 52px, address fields 46px, font 18pt/16pt
+- **Larger buttons**: Height 63px, font 18pt for better click targets
 - **Improved readability**: All text now optimized for large/high-resolution displays
-- **Consistent styling**: 15-16pt labels, 14pt info text
+- **Consistent styling**: 17-18pt labels, 16pt info text, 15pt footer
+- **Enhanced padding**: Increased spacing for better visual hierarchy
 
 ### 🔧 Build System
 
