@@ -34,6 +34,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - When disabled: Introducer Address fields become editable again
 - **Purpose**: Most introducers live near the applicant, so this saves time by avoiding duplicate data entry
 
+### 🖥️ Large Screen Optimization
+
+#### Enhanced UI Scaling
+- **Larger fonts throughout**: Title (30pt), sections (22pt), subsections (18pt)
+- **Bigger input fields**: Main fields height 45px, address fields 40px
+- **Larger buttons**: Height 55px, font 16pt for better click targets
+- **Improved readability**: All text now optimized for large/high-resolution displays
+- **Consistent styling**: 15-16pt labels, 14pt info text
+
 ### 🔧 Build System
 
 #### Dynamic Inno Setup Detection
