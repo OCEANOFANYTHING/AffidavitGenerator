@@ -354,18 +354,18 @@ header_frame.pack(fill="x", padx=10, pady=10)
 title_label = ctk.CTkLabel(
     header_frame,
     text="🏛️ General Affidavit Generator",
-    font=("Bookman Old Style", 30, "bold"),
+    font=("Bookman Old Style", 35, "bold"),
     text_color=("#1f538d", "#63b4ff")
 )
-title_label.pack(pady=15)
+title_label.pack(pady=18)
 
 subtitle_label = ctk.CTkLabel(
     header_frame,
     text="Generate citizenship affidavits with ease",
-    font=("Bookman Old Style", 15, "italic"),
+    font=("Bookman Old Style", 17, "italic"),
     text_color="gray"
 )
-subtitle_label.pack(pady=(0, 10))
+subtitle_label.pack(pady=(0, 12))
 
 # Main content frame with scrolling - Optimized settings
 main_container = ctk.CTkFrame(app, fg_color="transparent")
@@ -389,7 +389,7 @@ entries = {}
 same_address_var = ctk.BooleanVar(value=False)
 
 # Helper function to create field rows efficiently
-def create_field_row(parent, label_text, field_key, padx=30, pady=8, label_width=250, height=40, font_size=14):
+def create_field_row(parent, label_text, field_key, padx=30, pady=8, label_width=280, height=46, font_size=16):
     """Create a field row with label and entry - optimized for large screens"""
     field_frame = ctk.CTkFrame(parent, fg_color="transparent")
     field_frame.pack(pady=pady, padx=padx, fill="x")
@@ -397,11 +397,11 @@ def create_field_row(parent, label_text, field_key, padx=30, pady=8, label_width
     label = ctk.CTkLabel(
         field_frame,
         text=label_text + " *",
-        font=("Bookman Old Style", 15 if padx <= 30 else 14, "bold" if padx <= 30 else "normal"),
+        font=("Bookman Old Style", 17 if padx <= 30 else 16, "bold" if padx <= 30 else "normal"),
         anchor="w",
-        width=label_width if padx <= 30 else 220
+        width=label_width if padx <= 30 else 250
     )
-    label.pack(side="left", padx=(0, 15))
+    label.pack(side="left", padx=(0, 18))
 
     entry = ctk.CTkEntry(field_frame, height=height, font=("Bookman Old Style", font_size))
     entry.pack(side="left", fill="x", expand=True)
@@ -416,26 +416,26 @@ def create_field_row(parent, label_text, field_key, padx=30, pady=8, label_width
 section1_label = ctk.CTkLabel(
     frame,
     text="📋 Applicant Information",
-    font=("Bookman Old Style", 22, "bold"),
+    font=("Bookman Old Style", 25, "bold"),
     anchor="w"
 )
-section1_label.pack(pady=(20, 10), padx=20, fill="x")
+section1_label.pack(pady=(25, 12), padx=20, fill="x")
 
 ctk.CTkFrame(frame, height=2, fg_color=("gray60", "gray40")).pack(fill="x", padx=20)
 
 # Basic applicant fields (larger size for big screens)
-create_field_row(frame, "Applicant Name", "Applicant Name", padx=30, pady=10, label_width=250, height=45, font_size=16)
-create_field_row(frame, "Applicants Father Name", "Applicants Father Name", padx=30, pady=10, label_width=250, height=45, font_size=16)
+create_field_row(frame, "Applicant Name", "Applicant Name", padx=30, pady=12, label_width=280, height=52, font_size=18)
+create_field_row(frame, "Applicants Father Name", "Applicants Father Name", padx=30, pady=12, label_width=280, height=52, font_size=18)
 
 # Indian Address subsection
 indian_address_label = ctk.CTkLabel(
     frame,
     text="🏠 Indian Address",
-    font=("Bookman Old Style", 18, "bold"),
+    font=("Bookman Old Style", 20, "bold"),
     anchor="w",
     text_color=("#1f538d", "#63b4ff")
 )
-indian_address_label.pack(pady=(15, 5), padx=40, fill="x")
+indian_address_label.pack(pady=(18, 6), padx=40, fill="x")
 
 # Create Indian address fields efficiently
 for field_key, field_label in [
@@ -445,7 +445,7 @@ for field_key, field_label in [
     ("IND_District", "District"),
     ("IND_Pin_Code", "Pin Code")
 ]:
-    entry = create_field_row(frame, field_label, field_key, padx=50, pady=6, height=40, font_size=14)
+    entry = create_field_row(frame, field_label, field_key, padx=50, pady=7, height=46, font_size=16)
     # Add trace to update introducer address if checkbox is checked
     def make_trace(ind_key, int_key):
         def on_ind_field_change(*_):
@@ -462,11 +462,11 @@ for field_key, field_label in [
 bangladesh_address_label = ctk.CTkLabel(
     frame,
     text="🏠 Bangladesh Address",
-    font=("Bookman Old Style", 18, "bold"),
+    font=("Bookman Old Style", 20, "bold"),
     anchor="w",
     text_color=("#1f538d", "#63b4ff")
 )
-bangladesh_address_label.pack(pady=(15, 5), padx=40, fill="x")
+bangladesh_address_label.pack(pady=(18, 6), padx=40, fill="x")
 
 # Create Bangladesh address fields efficiently
 for field_key, field_label in [
@@ -475,24 +475,24 @@ for field_key, field_label in [
     ("BD_Police_Station", "Police Station"),
     ("BD_District", "District")
 ]:
-    create_field_row(frame, field_label, field_key, padx=50, pady=6, height=40, font_size=14)
+    create_field_row(frame, field_label, field_key, padx=50, pady=7, height=46, font_size=16)
 
 # Date of Entry field
 date_frame = ctk.CTkFrame(frame, fg_color="transparent")
-date_frame.pack(pady=10, padx=30, fill="x")
+date_frame.pack(pady=12, padx=30, fill="x")
 
 date_label = ctk.CTkLabel(
     date_frame,
     text="Date of Entry (India) *",
-    font=("Bookman Old Style", 16, "bold"),
+    font=("Bookman Old Style", 18, "bold"),
     anchor="w",
-    width=250
+    width=280
 )
-date_label.pack(side="left", padx=(0, 15))
+date_label.pack(side="left", padx=(0, 18))
 
 date_entry_widget = DateEntry(
     date_frame,
-    font=("Bookman Old Style", 14),
+    font=("Bookman Old Style", 16),
     date_pattern="dd-mm-yyyy",
     width=25,
     background='darkblue',
@@ -509,27 +509,27 @@ date_entry_widget.bind('<Tab>', focus_next_widget)
 section2_label = ctk.CTkLabel(
     frame,
     text="👤 Introducer/Character Reference",
-    font=("Bookman Old Style", 22, "bold"),
+    font=("Bookman Old Style", 25, "bold"),
     anchor="w"
 )
-section2_label.pack(pady=(30, 10), padx=20, fill="x")
+section2_label.pack(pady=(35, 12), padx=20, fill="x")
 
 ctk.CTkFrame(frame, height=2, fg_color=("gray60", "gray40")).pack(fill="x", padx=20)
 
 # Create introducer fields efficiently (larger for big screens)
-create_field_row(frame, "Introducer Name", "Introducer Name", padx=30, pady=10, label_width=250, height=45, font_size=16)
-create_field_row(frame, "Introducer Occupation", "Introducer Occupation", padx=30, pady=10, label_width=250, height=45, font_size=16)
-create_field_row(frame, "Introducer Father Name", "Introducer Father Name", padx=30, pady=10, label_width=250, height=45, font_size=16)
+create_field_row(frame, "Introducer Name", "Introducer Name", padx=30, pady=12, label_width=280, height=52, font_size=18)
+create_field_row(frame, "Introducer Occupation", "Introducer Occupation", padx=30, pady=12, label_width=280, height=52, font_size=18)
+create_field_row(frame, "Introducer Father Name", "Introducer Father Name", padx=30, pady=12, label_width=280, height=52, font_size=18)
 
 # Introducer Address subsection
 introducer_address_label = ctk.CTkLabel(
     frame,
     text="🏠 Introducer Address",
-    font=("Bookman Old Style", 18, "bold"),
+    font=("Bookman Old Style", 20, "bold"),
     anchor="w",
     text_color=("#1f538d", "#63b4ff")
 )
-introducer_address_label.pack(pady=(15, 5), padx=40, fill="x")
+introducer_address_label.pack(pady=(18, 6), padx=40, fill="x")
 
 # Same address checkbox
 same_address_checkbox = ctk.CTkCheckBox(
@@ -537,11 +537,11 @@ same_address_checkbox = ctk.CTkCheckBox(
     text="Same as Applicant's Indian Address",
     variable=same_address_var,
     command=toggle_same_address,
-    font=("Bookman Old Style", 14),
-    checkbox_width=24,
-    checkbox_height=24
+    font=("Bookman Old Style", 16),
+    checkbox_width=26,
+    checkbox_height=26
 )
-same_address_checkbox.pack(pady=(5, 10), padx=50, anchor="w")
+same_address_checkbox.pack(pady=(6, 12), padx=50, anchor="w")
 
 # Create introducer address fields efficiently
 for field_key, field_label in [
@@ -551,29 +551,29 @@ for field_key, field_label in [
     ("INT_District", "District"),
     ("INT_Pin_Code", "Pin Code")
 ]:
-    entry = create_field_row(frame, field_label, field_key, padx=50, pady=6, height=40, font_size=14)
+    entry = create_field_row(frame, field_label, field_key, padx=50, pady=7, height=46, font_size=16)
     introducer_address_entries.append(entry)
 
 # Age field with number input
 age_frame = ctk.CTkFrame(frame, fg_color="transparent")
-age_frame.pack(pady=10, padx=30, fill="x")
+age_frame.pack(pady=12, padx=30, fill="x")
 
 age_label = ctk.CTkLabel(
     age_frame,
     text="Introducer Age *",
-    font=("Bookman Old Style", 16, "bold"),
+    font=("Bookman Old Style", 18, "bold"),
     anchor="w",
-    width=250
+    width=280
 )
-age_label.pack(side="left", padx=(0, 15))
+age_label.pack(side="left", padx=(0, 18))
 
 # Create validation command for number-only input
 vcmd = (app.register(validate_number_input), '%P')
 
 age_entry = ctk.CTkEntry(
     age_frame,
-    height=45,
-    font=("Bookman Old Style", 14),
+    height=52,
+    font=("Bookman Old Style", 16),
     width=150,
     validate='key',
     validatecommand=vcmd,
@@ -587,38 +587,38 @@ age_entry.bind('<Tab>', focus_next_widget)
 age_hint = ctk.CTkLabel(
     age_frame,
     text="(Age 18-100)",
-    font=("Bookman Old Style", 13, "italic"),
+    font=("Bookman Old Style", 15, "italic"),
     text_color="gray"
 )
-age_hint.pack(side="left", padx=10)
+age_hint.pack(side="left", padx=12)
 
 # Info section - Simplified for performance
 info_frame = ctk.CTkFrame(frame, fg_color=("lightblue", "gray25"), border_width=1, border_color=("gray60", "gray40"))
-info_frame.pack(pady=20, padx=30, fill="x")
+info_frame.pack(pady=25, padx=30, fill="x")
 
 info_text = ctk.CTkLabel(
     info_frame,
     text="ℹ️ Current date will be automatically added to the documents",
-    font=("Bookman Old Style", 14),
+    font=("Bookman Old Style", 16),
     text_color="gray"
 )
-info_text.pack(pady=10)
+info_text.pack(pady=12)
 
 # Force UI update to ensure smooth rendering
 frame.update_idletasks()
 
 # Bottom frame for buttons
 button_frame = ctk.CTkFrame(app, fg_color="transparent")
-button_frame.pack(fill="x", padx=10, pady=15)
+button_frame.pack(fill="x", padx=10, pady=18)
 
 # Buttons (larger for big screens)
 clear_btn = ctk.CTkButton(
     button_frame,
     text="🔄 Clear Form",
     command=clear_form,
-    font=("Bookman Old Style", 16, "bold"),
-    height=55,
-    width=200,
+    font=("Bookman Old Style", 18, "bold"),
+    height=63,
+    width=230,
     fg_color="gray",
     hover_color="darkgray"
 )
@@ -628,30 +628,30 @@ submit_btn = ctk.CTkButton(
     button_frame,
     text="📄 Generate Affidavits",
     command=submit_form,
-    font=("Bookman Old Style", 16, "bold"),
-    height=55,
-    width=280,
+    font=("Bookman Old Style", 18, "bold"),
+    height=63,
+    width=320,
     fg_color=("#1f538d", "#2980b9"),
     hover_color=("#16406b", "#1c5a8a")
 )
-submit_btn.pack(side="right", padx=15)
+submit_btn.pack(side="right", padx=18)
 
 # Status label
 status_label = ctk.CTkLabel(
     app,
     text="",
-    font=("Bookman Old Style", 14, "italic")
+    font=("Bookman Old Style", 16, "italic")
 )
-status_label.pack(pady=8)
+status_label.pack(pady=10)
 
 # Footer
-footer_frame = ctk.CTkFrame(app, fg_color="transparent", height=35)
-footer_frame.pack(side="bottom", fill="x", pady=8)
+footer_frame = ctk.CTkFrame(app, fg_color="transparent", height=40)
+footer_frame.pack(side="bottom", fill="x", pady=10)
 
 footer = ctk.CTkLabel(
     footer_frame,
     text="Powered by N&D Co. | www.ndcompany.in | Version 1.1",
-    font=("Times New Roman", 13, "italic"),
+    font=("Times New Roman", 15, "italic"),
     text_color="gray"
 )
 footer.pack()
