@@ -122,6 +122,13 @@ installer_output/    # Windows installer output
 - Schedule-1C uses 9.5pt, others use 12pt
 - Uses `Bookman Old Style` font
 
+### Large Screen Optimization
+- UI optimized for large/high-resolution displays (4K monitors)
+- Title: 30pt, Sections: 22pt, Subsections: 18pt
+- Main fields: height 45px, font 16pt
+- Address fields: height 40px, font 14pt
+- Buttons: height 55px, font 16pt
+
 ### Form Validation
 - All text fields are required
 - Age must be 18-100 (validated as integer)
