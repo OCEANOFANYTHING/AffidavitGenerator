@@ -76,6 +76,13 @@ Get the latest version of Affidavit Generator:
 - 📄 **Font Size Optimization** - Schedule-1C document now uses 9.5pt font for better fit
   - Other documents continue using 12pt font
 
+### 🖥️ Large Screen Optimization
+- **Enhanced UI Scaling** - All UI elements optimized for large/high-resolution displays
+- **Larger fonts**: Title (30pt), sections (22pt), subsections (18pt)
+- **Bigger input fields**: Main fields height 45px, address fields 40px
+- **Larger buttons**: Height 55px, font 16pt for better click targets
+- **Improved readability**: All text now optimized for 4K and large monitors
+
 ### 🔧 Build System
 - 🔍 **Dynamic Inno Setup Detection** - Build script automatically finds Inno Setup installation
   - Works across different computers regardless of installation location
