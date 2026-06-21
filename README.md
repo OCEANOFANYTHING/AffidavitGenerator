@@ -77,11 +77,12 @@ Get the latest version of Affidavit Generator:
   - Other documents continue using 12pt font
 
 ### 🖥️ Large Screen Optimization
-- **Enhanced UI Scaling** - All UI elements optimized for large/high-resolution displays
-- **Larger fonts**: Title (30pt), sections (22pt), subsections (18pt)
-- **Bigger input fields**: Main fields height 45px, address fields 40px
-- **Larger buttons**: Height 55px, font 16pt for better click targets
+- **Enhanced UI Scaling** - All UI elements optimized for large/high-resolution displays (v2 - 15% larger)
+- **Larger fonts**: Title (35pt), sections (25pt), subsections (20pt)
+- **Bigger input fields**: Main fields height 52px, address fields 46px, font 18pt/16pt
+- **Larger buttons**: Height 63px, font 18pt for better click targets
 - **Improved readability**: All text now optimized for 4K and large monitors
+- **Enhanced padding**: Increased spacing for better visual hierarchy
 
 ### 🔧 Build System
 - 🔍 **Dynamic Inno Setup Detection** - Build script automatically finds Inno Setup installation
