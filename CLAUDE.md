@@ -124,10 +124,10 @@ installer_output/    # Windows installer output
 
 ### Large Screen Optimization
 - UI optimized for large/high-resolution displays (4K monitors)
-- Title: 30pt, Sections: 22pt, Subsections: 18pt
-- Main fields: height 45px, font 16pt
-- Address fields: height 40px, font 14pt
-- Buttons: height 55px, font 16pt
+- Title: 35pt, Sections: 25pt, Subsections: 20pt
+- Main fields: height 52px, font 18pt
+- Address fields: height 46px, font 16pt
+- Buttons: height 63px, font 18pt
 
 ### Form Validation
 - All text fields are required
