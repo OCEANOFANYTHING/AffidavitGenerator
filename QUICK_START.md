@@ -26,6 +26,8 @@ Get up and running with Affidavit Generator in just a few minutes.
 
 No additional setup required! The application is ready to use.
 
+**Note:** The UI is optimized for large/high-resolution displays. It will automatically scale for best readability on 4K monitors.
+
 ---
 
 ## 3. Generate Affidavits
