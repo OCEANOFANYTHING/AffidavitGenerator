@@ -6,22 +6,23 @@ This document details the advanced features of Affidavit Generator v1.1.0.
 
 ## 🖥️ Large Screen Optimization
 
-The application has been optimized for large and high-resolution displays.
+The application has been optimized for large and high-resolution displays (v2 - 15% larger).
 
 ### UI Scaling
-- **Title**: 30pt font
-- **Section Headers**: 22pt font
-- **Subsection Labels**: 18pt font
-- **Main Input Fields**: Height 45px, 16pt font
-- **Address Fields**: Height 40px, 14pt font
-- **Buttons**: Height 55px, 16pt font
-- **Labels**: 15-16pt font
+- **Title**: 35pt font
+- **Section Headers**: 25pt font
+- **Subsection Labels**: 20pt font
+- **Main Input Fields**: Height 52px, 18pt font
+- **Address Fields**: Height 46px, 16pt font
+- **Buttons**: Height 63px, 18pt font
+- **Labels**: 17-18pt font
 
 ### Benefits
 - Better readability on 4K monitors
 - Easier to use with large displays
 - Improved touch compatibility
 - Consistent visual hierarchy
+- Enhanced padding and spacing
 
 ---
 
