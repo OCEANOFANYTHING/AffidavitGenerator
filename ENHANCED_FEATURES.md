@@ -4,6 +4,27 @@ This document details the advanced features of Affidavit Generator v1.1.0.
 
 ---
 
+## 🖥️ Large Screen Optimization
+
+The application has been optimized for large and high-resolution displays.
+
+### UI Scaling
+- **Title**: 30pt font
+- **Section Headers**: 22pt font
+- **Subsection Labels**: 18pt font
+- **Main Input Fields**: Height 45px, 16pt font
+- **Address Fields**: Height 40px, 14pt font
+- **Buttons**: Height 55px, 16pt font
+- **Labels**: 15-16pt font
+
+### Benefits
+- Better readability on 4K monitors
+- Easier to use with large displays
+- Improved touch compatibility
+- Consistent visual hierarchy
+
+---
+
 ## 📍 Same Address Checkbox
 
 The **"Same as Applicant's Indian Address"** checkbox in the Introducer Address section is a powerful time-saving feature.
