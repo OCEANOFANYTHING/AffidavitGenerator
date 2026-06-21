@@ -4,13 +4,31 @@ This guide explains the user interface of Affidavit Generator v1.1.0.
 
 ---
 
+## 🖥️ Large Screen Support
+
+The application is optimized for large and high-resolution displays:
+
+| Element | Font Size | Dimensions |
+|---------|-----------|------------|
+| Title | 30pt | Bold |
+| Section Headers | 22pt | Bold |
+| Subsection Labels | 18pt | Bold |
+| Main Input Fields | 16pt | Height 45px |
+| Address Fields | 14pt | Height 40px |
+| Buttons | 16pt | Height 55px |
+| Labels | 15-16pt | Varies |
+
+The UI automatically scales for best readability on 4K monitors and large screens.
+
+---
+
 ## Main Window
 
 The application launches in fullscreen mode for maximum visibility. The window consists of:
 
-1. **Header** - Application title and branding
-2. **Scrollable Form Area** - Contains all input fields
-3. **Action Buttons** - Generate and Clear buttons
+1. **Header** - Application title and branding (30pt title)
+2. **Scrollable Form Area** - Contains all input fields (large, readable inputs)
+3. **Action Buttons** - Generate and Clear buttons (55px height)
 4. **Status Bar** - Shows generation status
 5. **Footer** - Version and credits information
 
